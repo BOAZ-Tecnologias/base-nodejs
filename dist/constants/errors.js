@@ -1,0 +1,17 @@
+"use strict";module.exports = {
+  IS_REQUIRED: 'is_required',
+  DELETED_SUCCESS: 'deleted_success',
+  DELETED_FAILURE: 'deleted_failure',
+  REQUIRED_RULE: 'required_rule',
+  MIN_RULE: 'min_rule',
+  MAX_RULE: 'max_rule',
+  CHARACTERS: 'characters',
+  INTEGER_RULE: 'integer_rule',
+  NUMBER_RULE: 'number_rule',
+  ARRAY_RULE: 'array_rule',
+  OBJECT_RULE: 'object_rule',
+  IN_RULE: 'in_rule',
+  STRING_RULE: 'string_rule',
+  DATE_RULE: 'date_rule',
+  BOOLEAN_RULE: 'boolean_rule',
+};

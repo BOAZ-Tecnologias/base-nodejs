@@ -1,0 +1,63 @@
+{
+  "name": "base-nodejs-service",
+  "version": "1.0.0",
+  "description": "Base NodeJS Service",
+  "main": "src/server.js",
+  "author": "@jeffmant",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "prod": "node dist/server.js",
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "build-schema": "cp ./src/graphql/schema.graphql ./dist/graphql"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "commitizen": "^4.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "sequelize-cli": "^5.5.1",
+    "sucrase": "^3.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "i18n": "^0.8.5",
+    "indicative": "^7.4.4",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "pg": "^7.18.1",
+    "sequelize": "^5.21.4",
+    "youch": "^2.0.10"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

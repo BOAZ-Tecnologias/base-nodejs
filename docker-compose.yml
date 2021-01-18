@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  service_name:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './:/app'
+    ports:
+      - '3000:3000'
+    networks:
+      - boaz
+networks:
+  boaz:
+    name: boaz
